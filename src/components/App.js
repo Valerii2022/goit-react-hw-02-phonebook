@@ -111,20 +111,6 @@ export class App extends Component {
           contacts={this.state.contacts}
           handleContactsDelete={this.handleContactsDelete}
         />
-        <ul>
-          {this.state.contacts.map(({ name, id, number }) => {
-            return (
-              <li key={id}>
-                <p>
-                  {name}: {number}
-                </p>
-                <button id={id} onClick={this.handleContactsDelete}>
-                  Delete
-                </button>
-              </li>
-            );
-          })}
-        </ul>
       </>
     );
   }

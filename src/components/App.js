@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
+import { ContactList } from './ContactList';
 
 export class App extends Component {
   state = {
@@ -106,6 +107,10 @@ export class App extends Component {
             onChange={this.handleFindNameInput}
           />
         </label>
+        <ContactList
+          contacts={this.state.contacts}
+          handleContactsDelete={this.handleContactsDelete}
+        />
         <ul>
           {this.state.contacts.map(({ name, id, number }) => {
             return (

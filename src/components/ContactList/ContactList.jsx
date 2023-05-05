@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { List, ListItem, Name, DeleteBtn, PhoneNumber } from './styled';
+// import PropTypes from 'prop-types';
 
 export class ContactList extends Component {
   render() {
     return (
-      <ul>
+      <List>
         {this.props.contacts.map(({ name, id, number }) => {
           return (
-            <li key={id}>
-              <p>
-                {name}: {number}
-              </p>
-              <button id={id} onClick={this.props.handleContactsDelete}>
+            <ListItem key={id}>
+              <Name>
+                {name}: <PhoneNumber>{number}</PhoneNumber>
+              </Name>
+              <DeleteBtn id={id} onClick={this.props.handleContactsDelete}>
                 Delete
-              </button>
-            </li>
+              </DeleteBtn>
+            </ListItem>
           );
         })}
-      </ul>
+      </List>
     );
   }
 }

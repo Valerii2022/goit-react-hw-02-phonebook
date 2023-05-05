@@ -68,8 +68,8 @@ export class App extends Component {
   render() {
     return (
       <>
+        <h1>Phonebook</h1>
         <form onSubmit={this.handleAddContacts}>
-          <h2>Phonebook</h2>
           <label>
             Name
             <input

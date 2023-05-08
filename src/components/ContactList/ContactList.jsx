@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import { List, ListItem, Name, DeleteBtn, PhoneNumber } from './styled';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export class ContactList extends Component {
   render() {
+    const { contacts, handleContactsDelete } = this.props;
     return (
       <List>
-        {this.props.contacts.map(({ name, id, number }) => {
+        {contacts.map(({ name, id, number }) => {
           return (
             <ListItem key={id}>
               <Name>
                 {name}: <PhoneNumber>{number}</PhoneNumber>
               </Name>
-              <DeleteBtn id={id} onClick={this.props.handleContactsDelete}>
+              <DeleteBtn id={id} onClick={handleContactsDelete}>
                 Delete
               </DeleteBtn>
             </ListItem>
@@ -22,3 +23,13 @@ export class ContactList extends Component {
     );
   }
 }
+
+ContactList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
+  handleContactsDelete: PropTypes.func.isRequired,
+};

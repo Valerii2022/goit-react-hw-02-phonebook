@@ -8,7 +8,8 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
   display: flex;
-  gap: 25px;
+  align-items: center;
+  gap: 10px;
 `;
 
 export const Name = styled.p`
@@ -26,6 +27,13 @@ export const DeleteBtn = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
-  background-color: red;
-  color: #fff;
+  border: 1px solid red;
+  backgroumd-color: #8e8e8e;
+  color: red;
+  outline: none;
+  transition: color 250ms linear, background-color 250ms linear;
+  :hover {
+    background-color: red;
+    color: #fff;
+  }
 `;

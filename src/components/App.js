@@ -24,13 +24,12 @@ export class App extends Component {
   };
 
   handleFindNameInput = e => {
-    const searchName = this.state.contacts.filter(contact =>
-      contact.name.toLowerCase().includes(e.currentTarget.value.toLowerCase())
-    );
+    // const searchName = this.state.contacts.filter(contact =>
+    //   contact.name.toLowerCase().includes(e.currentTarget.value.toLowerCase())
+    // );
 
     this.setState({
       filter: e.currentTarget.value,
-      contacts: [...searchName],
     });
   };
 
@@ -67,6 +66,9 @@ export class App extends Component {
   };
 
   render() {
+    const renderNames = this.state.contacts.filter(contact =>
+      contact.name.toLowerCase().includes(this.state.filter.toLowerCase())
+    );
     return (
       <>
         <h1>Phonebook</h1>
@@ -108,7 +110,7 @@ export class App extends Component {
           />
         </label>
         <ContactList
-          contacts={this.state.contacts}
+          contacts={renderNames}
           handleContactsDelete={this.handleContactsDelete}
         />
       </>

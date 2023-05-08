@@ -24,10 +24,6 @@ export class App extends Component {
   };
 
   handleFindNameInput = e => {
-    // const searchName = this.state.contacts.filter(contact =>
-    //   contact.name.toLowerCase().includes(e.currentTarget.value.toLowerCase())
-    // );
-
     this.setState({
       filter: e.currentTarget.value,
     });

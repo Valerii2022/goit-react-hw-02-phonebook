@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
+  padding-left: 15px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -25,7 +26,6 @@ export const DeleteBtn = styled.button`
   padding: 5px;
   border-radius: 5px;
   border: none;
-  outline: none;
   cursor: pointer;
   border: 1px solid red;
   backgroumd-color: #8e8e8e;

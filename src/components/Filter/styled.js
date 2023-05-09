@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
+export const Form = styled.form`
+  margin-left: 15px;
+  margin-bottom: 30px;
+  width: 330px;
+`;
+
 export const FindLabel = styled.label`
   display: flex;
   flex-direction: column;
-  margin-left: 15px;
-  width: 330px;
   gap: 10px;
   font-size: 18px;
   font-weight: 500;
